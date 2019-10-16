@@ -9,7 +9,7 @@
 import UIKit
 import IGListKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -18,30 +18,54 @@ class FirstViewController: UIViewController {
     }()
     
     lazy var users = [
+        Tab(),
         User(id: 1, name: "Littlefinger"),
         User(id: 2, name: "Tommen Baratheon"),
-        User(id: 3, name: "Roose Bolton")
+        User(id: 3, name: "Roose Bolton"),
+        User(id: 1, name: "Littlefinger"),
+        User(id: 2, name: "Tommen Baratheon"),
+        User(id: 3, name: "Roose Bolton"),
+        User(id: 3, name: "Roose Bolton"),
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        adapter.scrollViewDelegate = self
+        sss()
     }
 
+    func sss() {
+        users.append(User(id: 4, name: "Roose sss"))
+        users.append(Tab())
+        users.append(User(id: 4, name: "Roose sss"))
+        users.append(Tab())
+        adapter.reloadData()
+    }
+    var a = 800
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if Int(scrollView.contentOffset.y) > a {
+            sss()
+            a = a + 500
+        }
+        
+    }
 }
 
 extension FirstViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return users
+        return users as! [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let sectionController = SectionController()
-        return sectionController
+        if object is User {
+            return SectionController()
+        } else {
+            return TabSectionController()
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
-    
 }

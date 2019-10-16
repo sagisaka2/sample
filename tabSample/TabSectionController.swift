@@ -1,20 +1,21 @@
 //
-//  SectionController.swift
+//  TabSectionController.swift
 //  tabSample
 //
-//  Created by 匂坂 勇仁 on 10/10/1 R.
+//  Created by 匂坂 勇仁 on 10/16/1 R.
 //  Copyright © 1 Reiwa 匂坂 勇仁. All rights reserved.
 //
 
 import UIKit
 import IGListKit
 
-class SectionController: ListSectionController {
+class TabSectionController: ListSectionController {
     
-    var user: User?
+    var tab: Tab?
+    
 }
 
-extension SectionController {
+extension TabSectionController {
     
     override func numberOfItems() -> Int {
         return 1
@@ -22,18 +23,18 @@ extension SectionController {
     
     override func sizeForItem(at index: Int) -> CGSize {
         guard let context = collectionContext else { return .zero }
-        return CGSize(width: context.containerSize.width, height: 150)
+        return CGSize(width: context.containerSize.width, height: 100)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let cell = collectionContext!.dequeueReusableCell(withNibName: "CollectionViewCell", bundle: nil, for: self, at: index) as! CollectionViewCell
         
-        cell.textLabel.text = user?.name
+        cell.textLabel.text = tab?.text
         return cell
     }
     
     override func didUpdate(to item: Any) {
-        self.user = item as? User
+        self.tab = item as? Tab
     }
     
     override func didSelectItem(at index: Int) {
