@@ -19,6 +19,8 @@
 		E72B7A40234F3AC500493859 /* SectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B7A3F234F3AC500493859 /* SectionController.swift */; };
 		E72B7A42234F3C3800493859 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72B7A41234F3C3800493859 /* CollectionViewCell.xib */; };
 		E72B7A44234F3D0B00493859 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B7A43234F3D0B00493859 /* CollectionViewCell.swift */; };
+		E790D4AA2356D39C00817AFB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790D4A92356D39C00817AFB /* Tab.swift */; };
+		E790D4AC2356D45B00817AFB /* TabSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790D4AB2356D45B00817AFB /* TabSectionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E72B7A3F234F3AC500493859 /* SectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionController.swift; sourceTree = "<group>"; };
 		E72B7A41234F3C3800493859 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		E72B7A43234F3D0B00493859 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E790D4A92356D39C00817AFB /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		E790D4AB2356D45B00817AFB /* TabSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSectionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				E72B7A09234F351900493859 /* AppDelegate.swift */,
 				E72B7A0B234F351900493859 /* FirstViewController.swift */,
 				E72B7A3F234F3AC500493859 /* SectionController.swift */,
+				E790D4AB2356D45B00817AFB /* TabSectionController.swift */,
 				E72B7A43234F3D0B00493859 /* CollectionViewCell.swift */,
 				E72B7A41234F3C3800493859 /* CollectionViewCell.xib */,
 				E72B7A0F234F351900493859 /* Main.storyboard */,
@@ -119,6 +124,7 @@
 				E72B7A14234F351A00493859 /* LaunchScreen.storyboard */,
 				E72B7A17234F351A00493859 /* Info.plist */,
 				E72B7A3D234F3A9400493859 /* User.swift */,
+				E790D4A92356D39C00817AFB /* Tab.swift */,
 			);
 			path = tabSample;
 			sourceTree = "<group>";
@@ -309,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72B7A40234F3AC500493859 /* SectionController.swift in Sources */,
+				E790D4AC2356D45B00817AFB /* TabSectionController.swift in Sources */,
 				E72B7A3E234F3A9400493859 /* User.swift in Sources */,
 				E72B7A44234F3D0B00493859 /* CollectionViewCell.swift in Sources */,
+				E790D4AA2356D39C00817AFB /* Tab.swift in Sources */,
 				E72B7A0A234F351900493859 /* AppDelegate.swift in Sources */,
 				E72B7A0C234F351900493859 /* FirstViewController.swift in Sources */,
 			);
@@ -487,18 +495,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 375AJZ9MFR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = tabSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tabSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = WildCardDevTLBTEC20180827;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -508,18 +520,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = tabSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tabSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
